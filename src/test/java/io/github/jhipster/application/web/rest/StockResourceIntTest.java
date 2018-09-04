@@ -57,6 +57,9 @@ public class StockResourceIntTest {
     private static final String DEFAULT_QUANTITY = "AAAAAAAAAA";
     private static final String UPDATED_QUANTITY = "BBBBBBBBBB";
 
+    private static final String DEFAULT_CONDITION = "AAAAAAAAAA";
+    private static final String UPDATED_CONDITION = "BBBBBBBBBB";
+
     @Autowired
     private StockRepository stockRepository;
 
@@ -105,7 +108,8 @@ public class StockResourceIntTest {
             .sku(DEFAULT_SKU)
             .itemId(DEFAULT_ITEM_ID)
             .price(DEFAULT_PRICE)
-            .quantity(DEFAULT_QUANTITY);
+            .quantity(DEFAULT_QUANTITY)
+            .condition(DEFAULT_CONDITION);
         return stock;
     }
 
@@ -135,6 +139,7 @@ public class StockResourceIntTest {
         assertThat(testStock.getItemId()).isEqualTo(DEFAULT_ITEM_ID);
         assertThat(testStock.getPrice()).isEqualTo(DEFAULT_PRICE);
         assertThat(testStock.getQuantity()).isEqualTo(DEFAULT_QUANTITY);
+        assertThat(testStock.getCondition()).isEqualTo(DEFAULT_CONDITION);
     }
 
     @Test
@@ -172,7 +177,8 @@ public class StockResourceIntTest {
             .andExpect(jsonPath("$.[*].sku").value(hasItem(DEFAULT_SKU.toString())))
             .andExpect(jsonPath("$.[*].itemId").value(hasItem(DEFAULT_ITEM_ID.toString())))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.intValue())))
-            .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.toString())));
+            .andExpect(jsonPath("$.[*].quantity").value(hasItem(DEFAULT_QUANTITY.toString())))
+            .andExpect(jsonPath("$.[*].condition").value(hasItem(DEFAULT_CONDITION.toString())));
     }
     
     @Test
@@ -190,7 +196,8 @@ public class StockResourceIntTest {
             .andExpect(jsonPath("$.sku").value(DEFAULT_SKU.toString()))
             .andExpect(jsonPath("$.itemId").value(DEFAULT_ITEM_ID.toString()))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.intValue()))
-            .andExpect(jsonPath("$.quantity").value(DEFAULT_QUANTITY.toString()));
+            .andExpect(jsonPath("$.quantity").value(DEFAULT_QUANTITY.toString()))
+            .andExpect(jsonPath("$.condition").value(DEFAULT_CONDITION.toString()));
     }
 
     @Test
@@ -218,7 +225,8 @@ public class StockResourceIntTest {
             .sku(UPDATED_SKU)
             .itemId(UPDATED_ITEM_ID)
             .price(UPDATED_PRICE)
-            .quantity(UPDATED_QUANTITY);
+            .quantity(UPDATED_QUANTITY)
+            .condition(UPDATED_CONDITION);
         StockDTO stockDTO = stockMapper.toDto(updatedStock);
 
         restStockMockMvc.perform(put("/api/stocks")
@@ -235,6 +243,7 @@ public class StockResourceIntTest {
         assertThat(testStock.getItemId()).isEqualTo(UPDATED_ITEM_ID);
         assertThat(testStock.getPrice()).isEqualTo(UPDATED_PRICE);
         assertThat(testStock.getQuantity()).isEqualTo(UPDATED_QUANTITY);
+        assertThat(testStock.getCondition()).isEqualTo(UPDATED_CONDITION);
     }
 
     @Test

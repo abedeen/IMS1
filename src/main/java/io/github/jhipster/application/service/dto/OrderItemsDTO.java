@@ -44,7 +44,7 @@ public class OrderItemsDTO implements Serializable {
 
     private Long namesId;
 
-    private Long orderItemsId;
+    private Long ordersId;
 
     private Long usersId;
 
@@ -188,16 +188,16 @@ public class OrderItemsDTO implements Serializable {
         return namesId;
     }
 
-    public void setNamesId(Long prodNameId) {
-        this.namesId = prodNameId;
+    public void setNamesId(Long nameEntityId) {
+        this.namesId = nameEntityId;
     }
 
-    public Long getOrderItemsId() {
-        return orderItemsId;
+    public Long getOrdersId() {
+        return ordersId;
     }
 
-    public void setOrderItemsId(Long ordersId) {
-        this.orderItemsId = ordersId;
+    public void setOrdersId(Long ordersId) {
+        this.ordersId = ordersId;
     }
 
     public Long getUsersId() {
@@ -250,7 +250,7 @@ public class OrderItemsDTO implements Serializable {
             ", category=" + getCategoryId() +
             ", condition=" + getConditionId() +
             ", names=" + getNamesId() +
-            ", orderItems=" + getOrderItemsId() +
+            ", orders=" + getOrdersId() +
             ", users=" + getUsersId() +
             "}";
     }

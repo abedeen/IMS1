@@ -82,14 +82,14 @@
         {
             "relationshipType": "one-to-one",
             "relationshipName": "names",
-            "otherEntityName": "prodName",
+            "otherEntityName": "nameEntity",
             "otherEntityField": "id",
             "ownerSide": true,
             "otherEntityRelationshipName": "orderItems"
         },
         {
             "relationshipType": "many-to-one",
-            "relationshipName": "orderItems",
+            "relationshipName": "orders",
             "otherEntityName": "orders",
             "otherEntityField": "id"
         },
