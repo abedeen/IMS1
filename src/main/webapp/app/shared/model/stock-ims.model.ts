@@ -5,6 +5,7 @@ export interface IStockIms {
     itemId?: string;
     price?: number;
     quantity?: string;
+    condition?: string;
     usersId?: number;
     userGroupId?: number;
 }
@@ -17,6 +18,7 @@ export class StockIms implements IStockIms {
         public itemId?: string,
         public price?: number,
         public quantity?: string,
+        public condition?: string,
         public usersId?: number,
         public userGroupId?: number
     ) {}
