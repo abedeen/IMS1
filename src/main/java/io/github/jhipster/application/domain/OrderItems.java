@@ -77,11 +77,11 @@ public class OrderItems implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private ProdName names;
+    private NameEntity names;
 
     @ManyToOne
     @JsonIgnoreProperties("")
-    private Orders orderItems;
+    private Orders orders;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -304,30 +304,30 @@ public class OrderItems implements Serializable {
         this.condition = condition;
     }
 
-    public ProdName getNames() {
+    public NameEntity getNames() {
         return names;
     }
 
-    public OrderItems names(ProdName prodName) {
-        this.names = prodName;
+    public OrderItems names(NameEntity nameEntity) {
+        this.names = nameEntity;
         return this;
     }
 
-    public void setNames(ProdName prodName) {
-        this.names = prodName;
+    public void setNames(NameEntity nameEntity) {
+        this.names = nameEntity;
     }
 
-    public Orders getOrderItems() {
-        return orderItems;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public OrderItems orderItems(Orders orders) {
-        this.orderItems = orders;
+    public OrderItems orders(Orders orders) {
+        this.orders = orders;
         return this;
     }
 
-    public void setOrderItems(Orders orders) {
-        this.orderItems = orders;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
     public Stock getUsers() {

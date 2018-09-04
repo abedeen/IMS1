@@ -12,8 +12,8 @@ import { ICategoryIms } from 'app/shared/model/category-ims.model';
 import { CategoryImsService } from 'app/entities/category-ims';
 import { IConditionIms } from 'app/shared/model/condition-ims.model';
 import { ConditionImsService } from 'app/entities/condition-ims';
-import { IProdNameIms } from 'app/shared/model/prod-name-ims.model';
-import { ProdNameImsService } from 'app/entities/prod-name-ims';
+import { INameEntityIms } from 'app/shared/model/name-entity-ims.model';
+import { NameEntityImsService } from 'app/entities/name-entity-ims';
 import { IOrdersIms } from 'app/shared/model/orders-ims.model';
 import { OrdersImsService } from 'app/entities/orders-ims';
 import { IStockIms } from 'app/shared/model/stock-ims.model';
@@ -33,7 +33,7 @@ export class OrderItemsImsUpdateComponent implements OnInit {
 
     conditions: IConditionIms[];
 
-    names: IProdNameIms[];
+    names: INameEntityIms[];
 
     orders: IOrdersIms[];
 
@@ -45,7 +45,7 @@ export class OrderItemsImsUpdateComponent implements OnInit {
         private orderStatusService: OrderStatusImsService,
         private categoryService: CategoryImsService,
         private conditionService: ConditionImsService,
-        private prodNameService: ProdNameImsService,
+        private nameEntityService: NameEntityImsService,
         private ordersService: OrdersImsService,
         private stockService: StockImsService,
         private activatedRoute: ActivatedRoute
@@ -101,13 +101,13 @@ export class OrderItemsImsUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.prodNameService.query({ filter: 'orderitems-is-null' }).subscribe(
-            (res: HttpResponse<IProdNameIms[]>) => {
+        this.nameEntityService.query({ filter: 'orderitems-is-null' }).subscribe(
+            (res: HttpResponse<INameEntityIms[]>) => {
                 if (!this.orderItems.namesId) {
                     this.names = res.body;
                 } else {
-                    this.prodNameService.find(this.orderItems.namesId).subscribe(
-                        (subRes: HttpResponse<IProdNameIms>) => {
+                    this.nameEntityService.find(this.orderItems.namesId).subscribe(
+                        (subRes: HttpResponse<INameEntityIms>) => {
                             this.names = [subRes.body].concat(res.body);
                         },
                         (subRes: HttpErrorResponse) => this.onError(subRes.message)
@@ -172,7 +172,7 @@ export class OrderItemsImsUpdateComponent implements OnInit {
         return item.id;
     }
 
-    trackProdNameById(index: number, item: IProdNameIms) {
+    trackNameEntityById(index: number, item: INameEntityIms) {
         return item.id;
     }
 

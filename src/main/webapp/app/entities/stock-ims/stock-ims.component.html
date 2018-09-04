@@ -20,6 +20,7 @@
             <th jhiSortBy="itemId"><span>Item Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="price"><span>Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="quantity"><span>Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="condition"><span>Condition</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="usersId"><span>Users</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="userGroupId"><span>User Group</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -33,6 +34,7 @@
                 <td>{{stock.itemId}}</td>
                 <td>{{stock.price}}</td>
                 <td>{{stock.quantity}}</td>
+                <td>{{stock.condition}}</td>
                 <td>
                     <div *ngIf="stock.usersId">
                         <a [routerLink]="['../users-ims', stock.usersId , 'view' ]" >{{stock.usersId}}</a>

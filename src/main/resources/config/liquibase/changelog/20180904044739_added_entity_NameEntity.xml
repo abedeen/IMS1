@@ -14,42 +14,14 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Stock.
+        Added the entity NameEntity.
     -->
-    <changeSet id="20180904042849-1" author="jhipster">
-        <createTable tableName="stock">
+    <changeSet id="20180904044739-1" author="jhipster">
+        <createTable tableName="name_entity">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="sku" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="item_id" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="price" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="quantity" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="jhi_condition" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="users_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
-            <column name="user_group_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 
