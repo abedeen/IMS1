@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tenant">
+            <h2><span>Tenant</span> {{tenant.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Company</span></dt>
+                <dd>
+                    <span>{{tenant.company}}</span>
+                </dd>
+                <dt><span>Contact Email</span></dt>
+                <dd>
+                    <span>{{tenant.contactEmail}}</span>
+                </dd>
+                <dt><span>Contact Name</span></dt>
+                <dd>
+                    <span>{{tenant.contactName}}</span>
+                </dd>
+                <dt><span>Contact Phone</span></dt>
+                <dd>
+                    <span>{{tenant.contactPhone}}</span>
+                </dd>
+                <dt><span>Contact Title</span></dt>
+                <dd>
+                    <span>{{tenant.contactTitle}}</span>
+                </dd>
+                <dt><span>Department</span></dt>
+                <dd>
+                    <span>{{tenant.department}}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{tenant.email}}</span>
+                </dd>
+                <dt><span>Logo URL</span></dt>
+                <dd>
+                    <span>{{tenant.logoURL}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{tenant.name}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tenant-ims', tenant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

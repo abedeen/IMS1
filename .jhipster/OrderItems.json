@@ -1,0 +1,113 @@
+{
+    "name": "OrderItems",
+    "fields": [
+        {
+            "fieldName": "category",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "condition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vendor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "receiveDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalSpending",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "quantityIn",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "quantityOut",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "status",
+            "otherEntityName": "orderStatus",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItems"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItems"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "condition",
+            "otherEntityName": "condition",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItems"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "names",
+            "otherEntityName": "prodName",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orderItems"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "orderItems",
+            "otherEntityName": "orders",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "users",
+            "otherEntityName": "stock",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180904042850",
+    "entityTableName": "order_items",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "ims"
+}

@@ -38,6 +38,17 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Tenant.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.UserGroup.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Stock.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.OrderItems.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Orders.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.OrderStatus.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Vendors.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Condition.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Users.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ProdName.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

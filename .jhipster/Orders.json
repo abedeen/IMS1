@@ -1,0 +1,45 @@
+{
+    "name": "Orders",
+    "fields": [
+        {
+            "fieldName": "orderReferenceNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statusId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notes",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "vendors",
+            "otherEntityName": "vendors",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "orders"
+        }
+    ],
+    "changelogDate": "20180904042851",
+    "entityTableName": "orders",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "ims"
+}

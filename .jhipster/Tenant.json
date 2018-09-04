@@ -1,0 +1,52 @@
+{
+    "name": "Tenant",
+    "fields": [
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactEmail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "department",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logoURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180904042847",
+    "entityTableName": "tenant",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "ims"
+}
