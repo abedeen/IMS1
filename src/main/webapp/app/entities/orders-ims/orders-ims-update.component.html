@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-orders-ims-heading">Create or edit a Orders</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!orders.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="orders.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orderReferenceNumber">Order Reference Number</label>
+                    <input type="text" class="form-control" name="orderReferenceNumber" id="field_orderReferenceNumber"
+                        [(ngModel)]="orders.orderReferenceNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_orderDate">Order Date</label>
+                    <input type="text" class="form-control" name="orderDate" id="field_orderDate"
+                        [(ngModel)]="orders.orderDate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="orders.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_statusId">Status Id</label>
+                    <input type="text" class="form-control" name="statusId" id="field_statusId"
+                        [(ngModel)]="orders.statusId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_notes">Notes</label>
+                    <input type="text" class="form-control" name="notes" id="field_notes"
+                        [(ngModel)]="orders.notes" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_vendors">Vendors</label>
+                    <select class="form-control" id="field_vendors" name="vendors" [(ngModel)]="orders.vendorsId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vendorsOption.id" *ngFor="let vendorsOption of vendors; trackBy: trackVendorsById">{{vendorsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

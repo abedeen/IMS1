@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity OrderItems.
+    -->
+    <changeSet id="20180904042850-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="status_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_status_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
+        <addForeignKeyConstraint baseColumnNames="condition_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_condition_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="condition"/>
+
+        <addForeignKeyConstraint baseColumnNames="names_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_names_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="prod_name"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_items_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_order_items_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orders"/>
+
+        <addForeignKeyConstraint baseColumnNames="users_id"
+                                 baseTableName="order_items"
+                                 constraintName="fk_order_items_users_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stock"/>
+
+    </changeSet>
+</databaseChangeLog>

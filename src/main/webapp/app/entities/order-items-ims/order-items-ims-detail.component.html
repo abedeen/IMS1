@@ -1,0 +1,111 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orderItems">
+            <h2><span>Order Items</span> {{orderItems.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Category</span></dt>
+                <dd>
+                    <span>{{orderItems.category}}</span>
+                </dd>
+                <dt><span>Condition</span></dt>
+                <dd>
+                    <span>{{orderItems.condition}}</span>
+                </dd>
+                <dt><span>Price</span></dt>
+                <dd>
+                    <span>{{orderItems.price}}</span>
+                </dd>
+                <dt><span>Quantity</span></dt>
+                <dd>
+                    <span>{{orderItems.quantity}}</span>
+                </dd>
+                <dt><span>Vendor</span></dt>
+                <dd>
+                    <span>{{orderItems.vendor}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{orderItems.status}}</span>
+                </dd>
+                <dt><span>Receive Date</span></dt>
+                <dd>
+                    <span>{{orderItems.receiveDate}}</span>
+                </dd>
+                <dt><span>Total Spending</span></dt>
+                <dd>
+                    <span>{{orderItems.totalSpending}}</span>
+                </dd>
+                <dt><span>Currency</span></dt>
+                <dd>
+                    <span>{{orderItems.currency}}</span>
+                </dd>
+                <dt><span>Status Id</span></dt>
+                <dd>
+                    <span>{{orderItems.statusId}}</span>
+                </dd>
+                <dt><span>Quantity In</span></dt>
+                <dd>
+                    <span>{{orderItems.quantityIn}}</span>
+                </dd>
+                <dt><span>Quantity Out</span></dt>
+                <dd>
+                    <span>{{orderItems.quantityOut}}</span>
+                </dd>
+                <dt><span>Notes</span></dt>
+                <dd>
+                    <span>{{orderItems.notes}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.statusId">
+                        <a [routerLink]="['/order-status-ims', orderItems.statusId, 'view']">{{orderItems.statusId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Category</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.categoryId">
+                        <a [routerLink]="['/category-ims', orderItems.categoryId, 'view']">{{orderItems.categoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Condition</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.conditionId">
+                        <a [routerLink]="['/condition-ims', orderItems.conditionId, 'view']">{{orderItems.conditionId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Names</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.namesId">
+                        <a [routerLink]="['/prod-name-ims', orderItems.namesId, 'view']">{{orderItems.namesId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Order Items</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.orderItemsId">
+                        <a [routerLink]="['/orders-ims', orderItems.orderItemsId, 'view']">{{orderItems.orderItemsId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Users</span></dt>
+                <dd>
+                    <div *ngIf="orderItems.usersId">
+                        <a [routerLink]="['/stock-ims', orderItems.usersId, 'view']">{{orderItems.usersId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/order-items-ims', orderItems.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
