@@ -30,11 +30,11 @@
                                  baseTableName="order_items"
                                  constraintName="fk_order_items_names_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="prod_name"/>
+                                 referencedTableName="name_entity"/>
 
-        <addForeignKeyConstraint baseColumnNames="order_items_id"
+        <addForeignKeyConstraint baseColumnNames="orders_id"
                                  baseTableName="order_items"
-                                 constraintName="fk_order_items_order_items_id"
+                                 constraintName="fk_order_items_orders_id"
                                  referencedColumnNames="id"
                                  referencedTableName="orders"/>
 

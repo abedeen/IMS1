@@ -17,7 +17,7 @@ export interface IOrderItemsIms {
     categoryId?: number;
     conditionId?: number;
     namesId?: number;
-    orderItemsId?: number;
+    ordersId?: number;
     usersId?: number;
 }
 
@@ -41,7 +41,7 @@ export class OrderItemsIms implements IOrderItemsIms {
         public categoryId?: number,
         public conditionId?: number,
         public namesId?: number,
-        public orderItemsId?: number,
+        public ordersId?: number,
         public usersId?: number
     ) {}
 }

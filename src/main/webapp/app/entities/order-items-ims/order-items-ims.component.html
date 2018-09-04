@@ -32,7 +32,7 @@
             <th><span>Category</span></th>
             <th><span>Condition</span></th>
             <th><span>Names</span></th>
-            <th><span>Order Items</span></th>
+            <th><span>Orders</span></th>
             <th><span>Users</span></th>
             <th></th>
             </tr>
@@ -70,12 +70,12 @@
                 </td>
                 <td>
                     <div *ngIf="orderItems.namesId">
-                        <a [routerLink]="['../prod-name-ims', orderItems.namesId , 'view' ]" >{{orderItems.namesId}}</a>
+                        <a [routerLink]="['../name-entity-ims', orderItems.namesId , 'view' ]" >{{orderItems.namesId}}</a>
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="orderItems.orderItemsId">
-                        <a [routerLink]="['../orders-ims', orderItems.orderItemsId , 'view' ]" >{{orderItems.orderItemsId}}</a>
+                    <div *ngIf="orderItems.ordersId">
+                        <a [routerLink]="['../orders-ims', orderItems.ordersId , 'view' ]" >{{orderItems.ordersId}}</a>
                     </div>
                 </td>
                 <td>

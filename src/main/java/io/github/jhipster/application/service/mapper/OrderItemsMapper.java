@@ -8,14 +8,14 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity OrderItems and its DTO OrderItemsDTO.
  */
-@Mapper(componentModel = "spring", uses = {OrderStatusMapper.class, CategoryMapper.class, ConditionMapper.class, ProdNameMapper.class, OrdersMapper.class, StockMapper.class})
+@Mapper(componentModel = "spring", uses = {OrderStatusMapper.class, CategoryMapper.class, ConditionMapper.class, NameEntityMapper.class, OrdersMapper.class, StockMapper.class})
 public interface OrderItemsMapper extends EntityMapper<OrderItemsDTO, OrderItems> {
 
     @Mapping(source = "status.id", target = "statusId")
     @Mapping(source = "category.id", target = "categoryId")
     @Mapping(source = "condition.id", target = "conditionId")
     @Mapping(source = "names.id", target = "namesId")
-    @Mapping(source = "orderItems.id", target = "orderItemsId")
+    @Mapping(source = "orders.id", target = "ordersId")
     @Mapping(source = "users.id", target = "usersId")
     OrderItemsDTO toDto(OrderItems orderItems);
 
@@ -23,7 +23,7 @@ public interface OrderItemsMapper extends EntityMapper<OrderItemsDTO, OrderItems
     @Mapping(source = "categoryId", target = "category")
     @Mapping(source = "conditionId", target = "condition")
     @Mapping(source = "namesId", target = "names")
-    @Mapping(source = "orderItemsId", target = "orderItems")
+    @Mapping(source = "ordersId", target = "orders")
     @Mapping(source = "usersId", target = "users")
     OrderItems toEntity(OrderItemsDTO orderItemsDTO);
 

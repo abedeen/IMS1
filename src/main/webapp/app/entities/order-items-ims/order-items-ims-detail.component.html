@@ -78,13 +78,13 @@
                 <dt><span>Names</span></dt>
                 <dd>
                     <div *ngIf="orderItems.namesId">
-                        <a [routerLink]="['/prod-name-ims', orderItems.namesId, 'view']">{{orderItems.namesId}}</a>
+                        <a [routerLink]="['/name-entity-ims', orderItems.namesId, 'view']">{{orderItems.namesId}}</a>
                     </div>
                 </dd>
-                <dt><span>Order Items</span></dt>
+                <dt><span>Orders</span></dt>
                 <dd>
-                    <div *ngIf="orderItems.orderItemsId">
-                        <a [routerLink]="['/orders-ims', orderItems.orderItemsId, 'view']">{{orderItems.orderItemsId}}</a>
+                    <div *ngIf="orderItems.ordersId">
+                        <a [routerLink]="['/orders-ims', orderItems.ordersId, 'view']">{{orderItems.ordersId}}</a>
                     </div>
                 </dd>
                 <dt><span>Users</span></dt>

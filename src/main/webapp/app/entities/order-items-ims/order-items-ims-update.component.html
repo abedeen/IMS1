@@ -100,12 +100,12 @@
                     <label class="form-control-label" for="field_names">Names</label>
                     <select class="form-control" id="field_names" name="names" [(ngModel)]="orderItems.namesId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="prodNameOption.id" *ngFor="let prodNameOption of names; trackBy: trackProdNameById">{{prodNameOption.id}}</option>
+                        <option [ngValue]="nameEntityOption.id" *ngFor="let nameEntityOption of names; trackBy: trackNameEntityById">{{nameEntityOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_orderItems">Order Items</label>
-                    <select class="form-control" id="field_orderItems" name="orderItems" [(ngModel)]="orderItems.orderItemsId" >
+                    <label class="form-control-label" for="field_orders">Orders</label>
+                    <select class="form-control" id="field_orders" name="orders" [(ngModel)]="orderItems.ordersId" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="ordersOption.id" *ngFor="let ordersOption of orders; trackBy: trackOrdersById">{{ordersOption.id}}</option>
                     </select>
