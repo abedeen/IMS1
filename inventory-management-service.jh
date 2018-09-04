@@ -22,7 +22,8 @@ name String,
 sku String,
 itemId String,
 price Long,
-quantity String
+quantity String,
+condition String
 }
 entity OrderItems{
 Category String,
@@ -77,7 +78,7 @@ entity Users {
 	phoneNumber String,
 	commissionPct Long
 }
-entity ProdName {
+entity NameEntity {
 id String,
 name String
 }
@@ -86,14 +87,14 @@ OrderItems {status} to OrderStatus
 Orders{vendors} to Vendors
 OrderItems{category} to Category
 OrderItems{condition} to Condition
-OrderItems{names} to ProdName  
+OrderItems{names} to NameEntity  
 }
 relationship ManyToOne {
 	Users{userGroup} to UserGroup,
     Users{tenant} to Tenant,
      Stock{users} to Users,
      Stock{userGroup} to UserGroup,
-      OrderItems{orderItems} to Orders,
+      OrderItems{orders} to Orders,
       OrderItems{users} to Stock    
 }
 
