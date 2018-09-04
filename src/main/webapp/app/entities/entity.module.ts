@@ -11,6 +11,7 @@ import { Ims1CategoryImsModule } from './category-ims/category-ims.module';
 import { Ims1ConditionImsModule } from './condition-ims/condition-ims.module';
 import { Ims1UsersImsModule } from './users-ims/users-ims.module';
 import { Ims1ProdNameImsModule } from './prod-name-ims/prod-name-ims.module';
+import { Ims1NameEntityImsModule } from './name-entity-ims/name-entity-ims.module';
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -27,6 +28,7 @@ import { Ims1ProdNameImsModule } from './prod-name-ims/prod-name-ims.module';
         Ims1ConditionImsModule,
         Ims1UsersImsModule,
         Ims1ProdNameImsModule,
+        Ims1NameEntityImsModule,
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],

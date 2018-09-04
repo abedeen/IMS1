@@ -20,6 +20,10 @@
         {
             "fieldName": "quantity",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "condition",
+            "fieldType": "String"
         }
     ],
     "relationships": [

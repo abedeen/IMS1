@@ -20,6 +20,8 @@ public class StockDTO implements Serializable {
 
     private String quantity;
 
+    private String condition;
+
     private Long usersId;
 
     private Long userGroupId;
@@ -72,6 +74,14 @@ public class StockDTO implements Serializable {
         this.quantity = quantity;
     }
 
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
     public Long getUsersId() {
         return usersId;
     }
@@ -118,6 +128,7 @@ public class StockDTO implements Serializable {
             ", itemId='" + getItemId() + "'" +
             ", price=" + getPrice() +
             ", quantity='" + getQuantity() + "'" +
+            ", condition='" + getCondition() + "'" +
             ", users=" + getUsersId() +
             ", userGroup=" + getUserGroupId() +
             "}";
