@@ -39,6 +39,9 @@ public class Stock implements Serializable {
     @Column(name = "quantity")
     private String quantity;
 
+    @Column(name = "jhi_condition")
+    private String condition;
+
     @ManyToOne
     @JsonIgnoreProperties("")
     private Users users;
@@ -121,6 +124,19 @@ public class Stock implements Serializable {
         this.quantity = quantity;
     }
 
+    public String getCondition() {
+        return condition;
+    }
+
+    public Stock condition(String condition) {
+        this.condition = condition;
+        return this;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
     public Users getUsers() {
         return users;
     }
@@ -177,6 +193,7 @@ public class Stock implements Serializable {
             ", itemId='" + getItemId() + "'" +
             ", price=" + getPrice() +
             ", quantity='" + getQuantity() + "'" +
+            ", condition='" + getCondition() + "'" +
             "}";
     }
 }
